@@ -56,10 +56,10 @@ fun ChatDesign(chatListModel: ChatListModel) {
                 Text(
                     text = chatListModel.name,
                     fontSize = 16.sp,
-                    fontWeight = FontWeight.SemiBold
+                    fontWeight = FontWeight.Normal
                 )
 
-                Text(text = chatListModel.time, color = Color.Gray)
+                Text(text = chatListModel.time, color = Color.DarkGray)
             }
             Spacer(modifier = Modifier.height(4.dp))
 
@@ -68,9 +68,9 @@ fun ChatDesign(chatListModel: ChatListModel) {
 
                 Text(
                     text = chatListModel.message,
-                    color = Color.Gray,
+                    color = Color.DarkGray,
                     fontSize = 14.sp,
-                    fontWeight = FontWeight.SemiBold,
+                    fontWeight = FontWeight.Normal,
                     maxLines = 1
                 )
 

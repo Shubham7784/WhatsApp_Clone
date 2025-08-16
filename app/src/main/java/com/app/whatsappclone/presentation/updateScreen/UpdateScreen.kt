@@ -37,7 +37,7 @@ import com.app.whatsappclone.presentation.bottomNavigation.BottomNavigation
 import com.app.whatsappclone.presentation.chatDesign.ChatDesign
 import com.app.whatsappclone.presentation.chatDesign.ChatListModel
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+
 @Composable
 @Preview(showSystemUi = true)
 fun UpdateScreen() {
@@ -162,10 +162,12 @@ fun UpdateScreen() {
         },
         modifier = Modifier.padding(top = 10.dp)
     )
-    {
-        Column(modifier = Modifier
-            .padding(top = 40.dp)
-            .verticalScroll(verticalScrollState)) {
+    { innerPadding ->
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .verticalScroll(verticalScrollState)
+        ) {
             Row(
                 modifier = Modifier
                     .padding(10.dp)
@@ -230,9 +232,11 @@ fun UpdateScreen() {
             }
             Spacer(modifier = Modifier.height(8.dp))
 
-            Row(modifier = Modifier
-                .padding(10.dp)
-                .fillMaxWidth()) {
+            Row(
+                modifier = Modifier
+                    .padding(10.dp)
+                    .fillMaxWidth()
+            ) {
                 Text(
                     text = "Find channels to follow",
                     fontSize = 16.sp,
