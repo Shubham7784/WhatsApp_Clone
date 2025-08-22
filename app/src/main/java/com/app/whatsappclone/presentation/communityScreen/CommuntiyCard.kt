@@ -32,7 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.app.whatsappclone.R
-import com.app.whatsappclone.presentation.chatDesign.ChatDesign
+import com.app.whatsappclone.presentation.chatListDesign.ChatDesign
 
 @Composable
 fun CommunityCard(communityModel: CommunityModel) {

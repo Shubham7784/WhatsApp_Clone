@@ -1,6 +1,5 @@
 package com.app.whatsappclone.presentation.updateScreen
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.horizontalScroll
@@ -34,8 +33,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.app.whatsappclone.R
 import com.app.whatsappclone.presentation.bottomNavigation.BottomNavigation
-import com.app.whatsappclone.presentation.chatDesign.ChatDesign
-import com.app.whatsappclone.presentation.chatDesign.ChatListModel
+import com.app.whatsappclone.presentation.chatListDesign.ChatDesign
+import com.app.whatsappclone.presentation.chatListDesign.ChatListModel
 
 
 @Composable

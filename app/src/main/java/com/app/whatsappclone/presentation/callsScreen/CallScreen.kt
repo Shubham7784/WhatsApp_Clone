@@ -30,12 +30,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.app.whatsappclone.presentation.bottomNavigation.BottomNavigation
 import com.app.whatsappclone.R
+import java.time.LocalDateTime
 
 @Composable
 @Preview(showSystemUi = true)
 fun CallScreen() {
 
     val verticalScrollState = rememberScrollState()
+    
+    val callData = listOf(CallDataModel("Name","Number",true, LocalDateTime.now(),true,false,true,2),
+        CallDataModel("Name","Number",false, LocalDateTime.now(),false,true,false,0),
+        CallDataModel("Name","Number",true, LocalDateTime.now(),false,false,false,2),
+        CallDataModel("Name","Number",false, LocalDateTime.now(),false,true,true,0),)
     Scaffold(
         topBar = { CallTopBar() },
         bottomBar = { BottomNavigation() }
@@ -97,7 +103,11 @@ fun CallScreen() {
             {
                 Text(text = "Recent",fontSize = 18.sp, fontWeight = FontWeight.Normal)
             }
-
+            Column {
+                callData.forEach{
+                    CallDesign(it)
+                }
+            }
         }
 
     }

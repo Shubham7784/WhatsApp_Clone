@@ -1,4 +1,4 @@
-package com.app.whatsappclone.presentation.chatDesign
+package com.app.whatsappclone.presentation.chatListDesign
 
 data class ChatListModel(
     val image: Int,

@@ -1,6 +1,6 @@
 package com.app.whatsappclone.presentation.communityScreen
 
-import com.app.whatsappclone.presentation.chatDesign.ChatListModel
+import com.app.whatsappclone.presentation.chatListDesign.ChatListModel
 
 data class CommunityModel(
     val communityImage : Int,

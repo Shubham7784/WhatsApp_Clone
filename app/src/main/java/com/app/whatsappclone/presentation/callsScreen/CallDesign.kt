@@ -38,15 +38,7 @@ import java.time.temporal.TemporalAmount
 import java.util.Date
 
 @Composable
-@Preview(showSystemUi = true)
-fun CallDesign() {
-
-    val isMultiple = true
-    val isOutgoing = false
-    val isMissed = true
-    val dateTime = LocalDateTime.of(2025, 8, 15, 21, 0, 0)
-    val isVideo = false
-
+fun CallDesign(callDataModel: CallDataModel) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -71,22 +63,22 @@ fun CallDesign() {
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Normal,
                     maxLines = 1,
-                    color = if (isMissed) Color.Red else Color.Black
+                    color = if (callDataModel.isMissed) Color.Red else Color.Black
                 )
-                if (isMultiple) {
+                if (callDataModel.isMultiple) {
                     Text(
-                        "(" + "Multiple" + ")", modifier = Modifier
+                        "(" + callDataModel.multipleCount.toString() + ")", modifier = Modifier
                             .align(Alignment.CenterVertically)
                             .padding(start = 6.dp),
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Normal,
                         maxLines = 1,
-                        color = if (isMissed) Color.Red else Color.Black
+                        color = if (callDataModel.isMissed) Color.Red else Color.Black
                     )
                 }
             }
             Row {
-                if (isOutgoing) {
+                if (callDataModel.isOutgoing) {
                     Icon(
                         Icons.AutoMirrored.Default.ArrowForward,
                         contentDescription = "Call Sign",
@@ -102,18 +94,18 @@ fun CallDesign() {
                     )
                 }
                 var dateText = ""
-                if (LocalDateTime.now().month == dateTime.month && LocalDateTime.now().year == dateTime.year) {
-                    if (LocalDateTime.now().dayOfMonth == dateTime.dayOfMonth) {
+                if (LocalDateTime.now().month == callDataModel.dateTime.month && LocalDateTime.now().year == callDataModel.dateTime.year) {
+                    if (LocalDateTime.now().dayOfMonth == callDataModel.dateTime.dayOfMonth) {
                         dateText = "Today"
-                    } else if (LocalDateTime.now().dayOfMonth - dateTime.dayOfMonth == 1) {
+                    } else if (LocalDateTime.now().dayOfMonth - callDataModel.dateTime.dayOfMonth == 1) {
                         dateText = "Yesterday"
                     }
                 } else {
-                    dateText = dateTime.month.toString() + " " + dateTime.dayOfMonth.toString()
+                    dateText = callDataModel.dateTime.month.toString() + " " + callDataModel.dateTime.dayOfMonth.toString()
                 }
-                dateText += ", " + if (dateTime.hour >= 12) dateTime.hour - 12 else dateTime.hour
-                dateText += ":" + dateTime.minute.toString()
-                dateText += " " + if (dateTime.hour >= 12) "PM" else "AM"
+                dateText += ", " + if (callDataModel.dateTime.hour >= 12) callDataModel.dateTime.hour - 12 else callDataModel.dateTime.hour
+                dateText += ":" + callDataModel.dateTime.minute.toString()
+                dateText += " " + if (callDataModel.dateTime.hour >= 12) "PM" else "AM"
 
                 Text(
                     text = dateText,
@@ -124,7 +116,7 @@ fun CallDesign() {
         }
         Spacer(modifier = Modifier.width(140.dp))
         Column(modifier = Modifier.align(Alignment.CenterVertically)) {
-            if (isVideo) {
+            if (callDataModel.isVideo) {
                 Icon(
                     painter = painterResource(R.drawable.videocall_icon),
                     contentDescription = "Calling Icon",
