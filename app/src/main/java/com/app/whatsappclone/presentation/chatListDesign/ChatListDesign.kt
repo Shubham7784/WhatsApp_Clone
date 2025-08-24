@@ -63,7 +63,7 @@ fun ChatDesign(chatListModel: ChatListModel) {
                 horizontalArrangement = Arrangement.SpaceBetween){
 
                 Text(
-                    text = chatListModel.message,
+                    text = chatListModel.messages.peek().message,
                     color = Color.DarkGray,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Normal,

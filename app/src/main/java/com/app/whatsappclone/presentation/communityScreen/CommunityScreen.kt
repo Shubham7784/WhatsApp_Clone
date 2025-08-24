@@ -42,7 +42,7 @@ fun CommunityScreen() {
 
     val groupData = ArrayList<ChatListModel>()
 
-    groupData.add(ChatListModel(R.drawable.profile_placeholder,"Group Name","10:00 AM","Hello",false,0,false))
+    groupData.add(ChatListModel(R.drawable.profile_placeholder,"Group Name","10:00 AM",false,0,false))
 
     val communitiesData = listOf(CommunityModel(R.drawable.profile_placeholder,"Community Name",
         AnnouncementModel("Hello","10:00 AM",false,false),groupData),

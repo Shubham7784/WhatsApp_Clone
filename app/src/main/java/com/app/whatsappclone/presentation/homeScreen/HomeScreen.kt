@@ -39,12 +39,12 @@ import com.app.whatsappclone.presentation.chatListDesign.ChatListModel
 @Preview(showSystemUi = true)
 fun HomeScreen()
 {
-    val chatData = listOf(ChatListModel(R.drawable.salman_khan,"Salman Bhoi","10:00 AM","Hello",false,0),
-        ChatListModel(R.drawable.sharukh_khan,"Shahrukh Bhoi","01:00 AM","Kyaa haal hai ?",true,1),
-        ChatListModel(R.drawable.ajay_devgn,"Ajay Devgan","07:00 PM","Bolo zubaan kesri",true,15,true),
-        ChatListModel(R.drawable.akshay_kumar,"Akshay Kumar","05:00 AM","Aaaeeee",false,0),
-        ChatListModel(R.drawable.carryminati,"Carry Bhai","02:00 AM","To kaise hai aap log ?",false,0),
-        ChatListModel(R.drawable.hrithik_roshan,"Hritik Roshan","06:30 PM","Aaila Jaadu",false,0))
+    val chatData = listOf(ChatListModel(R.drawable.salman_khan,"Salman Bhoi","10:00 AM",false,0),
+        ChatListModel(R.drawable.sharukh_khan,"Shahrukh Bhoi","01:00 AM",true,1),
+        ChatListModel(R.drawable.ajay_devgn,"Ajay Devgan","07:00 PM",true,15,true),
+        ChatListModel(R.drawable.akshay_kumar,"Akshay Kumar","05:00 AM",false,0),
+        ChatListModel(R.drawable.carryminati,"Carry Bhai","02:00 AM",false,0),
+        ChatListModel(R.drawable.hrithik_roshan,"Hritik Roshan","06:30 PM",false,0))
 
     var searchText = remember { mutableStateOf("Ask Meta AI or Search") }
 
